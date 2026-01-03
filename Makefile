@@ -4,34 +4,34 @@
 compose-up:
 	docker compose up -d
 
-.PHONY: docker-run-nodejs-multi-instances
-docker-run-nodejs-multi-instances:
-	@echo "Starting Node.js instance 1..."
+# .PHONY: docker-run-nodejs-multi-instances
+# docker-run-nodejs-multi-instances:
+# 	@echo "Starting Node.js instance 1..."
 
-	docker run \
-        	--name express-node-app-container-1 \
-	        --publish 4001:4001 \
-	        --env-file ./.env \
-		-d \
-	        node-app-node-app:latest
+# 	docker run \
+#         	--name express-node-app-container-1 \
+# 	        --publish 4001:4001 \
+# 	        --env-file ./.env \
+# 		-d \
+# 	        node-app-node-app:latest
 
-	@echo "Starting Node.js instance 2..."
+# 	@echo "Starting Node.js instance 2..."
 	
-	docker run \
-	        --name express-node-app-container-2 \
-		--publish 4002:4002 \
-	        --env-file ./.env \
-		-d \
-	        node-app-node-app:latest
+# 	docker run \
+# 	        --name express-node-app-container-2 \
+# 		--publish 4002:4002 \
+# 	        --env-file ./.env \
+# 		-d \
+# 	        node-app-node-app:latest
 
-	@echo "Starting Node.js instance 3..."
+# 	@echo "Starting Node.js instance 3..."
 	
-	docker run \
-	        --name express-node-app-container-3 \
-		--publish 4003:4003 \
-	        --env-file ./.env \
-		-d \
-		node-app-node-app:latest
+# 	docker run \
+# 	        --name express-node-app-container-3 \
+# 		--publish 4003:4003 \
+# 	        --env-file ./.env \
+# 		-d \
+# 		node-app-node-app:latest
 
 
 
