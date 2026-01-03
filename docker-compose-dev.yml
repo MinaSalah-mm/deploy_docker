@@ -1,0 +1,49 @@
+services:
+  node-app:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+      # - /app/src/tempdir/ # anonymous volume container can not remove that dir
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
+
+  node-app-1:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
+
+  node-app-2:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
+
+  node-app-3:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
