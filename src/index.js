@@ -5,7 +5,7 @@
 // redis : 4.1.0 -> from the course . 
 
 const express = require('express');
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const redis = require('redis');
 const { Client } = require('pg');
 
