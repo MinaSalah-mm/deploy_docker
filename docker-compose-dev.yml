@@ -3,8 +3,7 @@ services:
     build:
       context: .
       target: development
-      # args: 
-      #   - NODE_ENV=development
+      image: mena677/docker-deploy
     volumes:
       - ./src:/app/src:ro 
       # - /app/src/tempdir/ # anonymous volume container can not remove that dir

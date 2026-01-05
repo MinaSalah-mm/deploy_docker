@@ -76,7 +76,7 @@ mongoose.connect(URI).then(
 
 app.get('/', (req, res) => {
 	redisClient.set('products', 'phones, laptop, sd, ram...etc');
-	res.send('<h1>Hello mena dev-dev <h1>')
+	res.send('<h1>Hello mena dev-dev using docker-hup <h1>')
 	console.log(`response sent on port : ${PORT}`)
 });
 
