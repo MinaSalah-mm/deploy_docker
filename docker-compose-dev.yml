@@ -11,38 +11,41 @@ services:
     command: npm run start-dev
 
 # region nodes required to working with nginx to apply the revers proxy idea .
-  # node-app-1:
-  #   build:
-  #     context: .
-  #     target: development
-  #     # args: 
-  #     #   - NODE_ENV=development
-  #   volumes:
-  #     - ./src:/app/src:ro 
-  #   environment:
-  #     - NODE_ENV=development
-  #   command: npm run start-dev
+  node-app-1:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+    container_name: express-node-app-container-1
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
 
-  # node-app-2:
-  #   build:
-  #     context: .
-  #     target: development
-  #     # args: 
-  #     #   - NODE_ENV=development
-  #   volumes:
-  #     - ./src:/app/src:ro 
-  #   environment:
-  #     - NODE_ENV=development
-  #   command: npm run start-dev
+  node-app-2:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+    container_name: express-node-app-container-2
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev
 
-  # node-app-3:
-  #   build:
-  #     context: .
-  #     target: development
-  #     # args: 
-  #     #   - NODE_ENV=development
-  #   volumes:
-  #     - ./src:/app/src:ro 
-  #   environment:
-  #     - NODE_ENV=development
-  #   command: npm run start-dev
+  node-app-3:
+    build:
+      context: .
+      target: development
+      # args: 
+      #   - NODE_ENV=development
+    volumes:
+      - ./src:/app/src:ro 
+    container_name: express-node-app-container-3
+    environment:
+      - NODE_ENV=development
+    command: npm run start-dev

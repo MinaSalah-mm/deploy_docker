@@ -62,6 +62,10 @@ compose-up-dev-mode-build:
 	docker compose -f docker-compose.yml -f docker-compose-dev.yml \
 	up -d --build
 
+.PHONY: compose-build-dev-mode
+compose-build-dev-mode: 
+	docker compose -f docker-compose.yml -f docker-compose-dev.yml build
+
 .PHONY: compose-down-dev-mode
 compose-down-dev-mode:
 	docker compose -f docker-compose.yml -f docker-compose-dev.yml down
@@ -82,6 +86,14 @@ compose-down-prod-mode:
 compose-up-prod-mode-build:
 	docker compose -f docker-compose.yml -f docker-compose-prod.yml \
 	up -d --build
+
+.PHONY: compose-build-prod-mode
+compose-build-prod-mode:
+	docker compose -f docker-compose.yml -f docker-compose-prod.yml build
+
+.PHONY: compose-push-prod-mode
+compose-push-prod-mode:
+	docker compose -f docker-compose.yml -f docker-compose-prod.yml push
 
 
 .PHONY: compose-terminal-express

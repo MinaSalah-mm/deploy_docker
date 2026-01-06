@@ -8,6 +8,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const redis = require('redis');
 const { Client } = require('pg');
+const os = require('os');
 
 // init app 
 const PORT = process.env.PORT || 4000;
@@ -77,7 +78,7 @@ mongoose.connect(URI).then(
 app.get('/', (req, res) => {
 	redisClient.set('products', 'phones, laptop, sd, ram...etc');
 	res.send('<h1>Hello mena dev-dev with docker, docker-hup, ec2-simulation <h1>')
-	console.log(`response sent on port : ${PORT}`)
+	console.log(`response sent on port : ${PORT}, host : ${os.hostname}`)
 });
 
 

@@ -8,3 +8,37 @@ services:
     environment:
       - NODE_ENV=production
     command: npm start
+
+  # region those nodes, wrorking for back-end with nginx reverse-proxy.
+  node-app-1:
+    build:
+      context: .
+      target: production
+      # args: 
+      #   - NODE_ENV=development
+    container_name: express-node-app-container-1
+    environment:
+      - NODE_ENV=development
+    command: npm start
+
+  node-app-2:
+    build:
+      context: .
+      target: production
+      # args: 
+      #   - NODE_ENV=development
+    container_name: express-node-app-container-2
+    environment:
+      - NODE_ENV=development
+    command: npm start
+
+  node-app-3:
+    build:
+      context: .
+      target: production
+      # args: 
+      #   - NODE_ENV=development
+    container_name: express-node-app-container-3
+    environment:
+      - NODE_ENV=development
+    command: npm start
