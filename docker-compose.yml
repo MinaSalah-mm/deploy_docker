@@ -2,6 +2,7 @@ services:
   node-app:
     # build: .
     container_name: express-node-app-container
+    image: mena677/docker-deploy
     ports:
       - "4000:4000"
     env_file:
