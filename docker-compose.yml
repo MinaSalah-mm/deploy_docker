@@ -52,7 +52,7 @@ services:
   node-app-1:
     # build: .
     container_name: express-node-app-container-1
-    image: mena677/docker-deploy
+    image: mena677/docker-deploy-1
     ports:
       - "4001:4000"
     env_file:
@@ -67,7 +67,7 @@ services:
   node-app-2:
     # build: .
     container_name: express-node-app-container-2
-    image: mena677/docker-deploy
+    image: mena677/docker-deploy-2
     ports:
       - "4002:4000"
     env_file:
@@ -82,7 +82,7 @@ services:
   node-app-3:
     # build: .
     container_name: express-node-app-container-3
-    image: mena677/docker-deploy
+    image: mena677/docker-deploy-3
     ports:
       - "4003:4000"
     env_file:
