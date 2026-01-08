@@ -95,6 +95,9 @@ compose-build-prod-mode:
 compose-push-prod-mode:
 	docker compose -f docker-compose.yml -f docker-compose-prod.yml push
 
+.PHONY: remove-all-containers
+remove-all-containers:
+	docker rm $(docker ps -aq)
 
 .PHONY: compose-terminal-express
 compose-terminal-express:
