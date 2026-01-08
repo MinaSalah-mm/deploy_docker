@@ -102,10 +102,10 @@ remove-all-containers:
 
 .PHONY: run-watchtower-container
 run-watchtower-container:
-	docker run --name watchtower -v /var/run/docker.sock:/var/run/docker.sock \
+	docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock \
 	-e WATCHTOWER_POLL_INTERVAL=30  containrrr/watchtower \
 	express-node-app-container express-node-app-container-1 \
-	express-node-app-container-2 express-node-app-container-3 -d
+	express-node-app-container-2 express-node-app-container-3
 
 
 .PHONY: compose-terminal-express
