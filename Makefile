@@ -99,6 +99,13 @@ compose-push-prod-mode:
 remove-all-containers:
 	docker rm $(docker ps -aq)
 
+
+.PHONY: run-watchtower-container
+run-watchtower-container:
+	docker run --name watchtower -v /var/run/docker.sock:/var/run/docker.sock \ 
+	-e WATCHTOWER_POLL_INTERVAL=30 -e WATCHTOWER_TRACE=true containrrr/watchtower -d
+
+
 .PHONY: compose-terminal-express
 compose-terminal-express:
 	docker exec -it express-node-app-container sh
